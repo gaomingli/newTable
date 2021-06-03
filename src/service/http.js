@@ -18,8 +18,20 @@ if (process.env.NODE_ENV === "production") {
     }
 } else {
     //dev 开发环境
-    axios.defaults.baseURL = "http://47.107.180.202:8080/user/";
+  //  axios.defaults.baseURL ="http://47.107.180.202:8080/user/";
 }
+
+axios.interceptors.request.use(
+	config => {
+	    config.url="/user"+config.url;
+		return config  // 对config处理完后返回，下一步将向后端发送请求
+	},
+	error => {  // 当发生错误时，执行该部分代码
+	    console.log(error); //调试用
+	    return Promise.reject(error)
+	}
+)
+
 
 // 响应拦截器
 axios.interceptors.response.use(

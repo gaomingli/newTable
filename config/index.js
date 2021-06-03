@@ -2,7 +2,7 @@
  * @Author       : yfye
  * @Date         : 2021-06-03 15:23:31
  * @LastEditors  : yfye
- * @LastEditTime : 2021-06-03 15:41:17
+ * @LastEditTime : 2021-06-03 17:58:05
  * @FilePath     : \newTable\config\index.js
  */
 'use strict'
@@ -10,7 +10,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
 module.exports = {
     dev: {
         // Paths

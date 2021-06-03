@@ -1,3 +1,10 @@
+<!--
+ * @Author       : yfye
+ * @Date         : 2021-06-03 15:23:31
+ * @LastEditors  : yfye
+ * @LastEditTime : 2021-06-03 16:49:01
+ * @FilePath     : \newTable\src\components\header\index.vue
+-->
 <template>
   <div class="header-common">
     <ul class="components-list">
@@ -48,12 +55,14 @@ export default {
 .components-list li {
   list-style: none;
   float: left;
-  padding: 5px 20px;
+  /* padding: 5px 20px; */
   color: #ffffff;
 }
 .components-list li a {
   color: #3a10f5;
   text-decoration: none;
+  padding: 0px 20px;
+    display: block;
 }
 .components-list {
   margin: 0;
