@@ -8,7 +8,7 @@
         :model="ruleForm"
         ref="ruleForm"
         label-width="100px"
-        :disabled="read ? 'true' : 'false'"
+        :disabled="read"
       >
         <el-form-item label="日期" prop="date">
           <el-date-picker
@@ -36,23 +36,30 @@
 </template>
 <script>
 export default {
+  props: {
+    dialogfrom: {
+      type: Object,
+    },
+  },
   data() {
     return {
       ruleForm: {
         date: "",
         name: "",
-        address: ""
+        address: "",
       },
-      dialogFormVisible: false
+      dialogFormVisible: false,
     };
   },
   methods: {
     init(id, read) {
-        debugger;;
-        this.dialogFormVisible = true;
-        this.id = 0 || id;
-        this.read = false || read;
-    }
-  }
+      this.dialogFormVisible = true;
+      this.id = 0 || id;
+      this.read = false || read;
+      if (id) {
+        this.ruleForm = this.dialogfrom;
+      }
+    },
+  },
 };
 </script>
