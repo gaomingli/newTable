@@ -188,11 +188,11 @@ export default {
       let formData = {Id:22,pageNo:1,pageSize:10};
      getTable(formData)
         .then((response) => {
-          if (response.data) {
-            this.tableData = response.data.data;
-            this.total = response.data.total;
-            this.pageSize = response.data.totalPages;
-            this.currentPage = response.data.currentPage;
+          if (response.status=='200') {
+            this.tableData = response.data;
+            this.total = response.total;
+            this.pageSize = response.totalPages;
+            this.currentPage = response.currentPage;
           }
         })
         .catch((err) => {
