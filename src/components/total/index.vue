@@ -1,22 +1,30 @@
+<!--
+ * @Author       : yfye
+ * @Date         : 2021-06-03 15:23:31
+ * @LastEditors  : yfye
+ * @LastEditTime : 2021-06-03 15:36:04
+ * @FilePath     : \newTable\src\components\total\index.vue
+-->
 <template>
   <div>
+      <el-button type="primary"  size="mini" @click="openDialog()">
+	        新增
+          </el-button>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="date" label="日期"> </el-table-column>
       <el-table-column prop="name" label="姓名"> </el-table-column>
       <el-table-column prop="address" label="地址"> </el-table-column>
       <el-table-column label="操作" width="300">
         <template slot-scope="scope">
-          <el-button type="primary" size="mini"  @click="openDialog(scope.row.id)" >
+          <el-button type="primary" size="mini"  @click="openDialog(scope.row)" >
             修改
           </el-button>
  
-          <el-button type="primary" size="mini" @click="openDialog(scope.row.id,scope.row.name)" > 
+          <el-button type="primary" size="mini" @click="openDialog(scope.row.id,scope.row)" > 
             详情
           </el-button>
  
-          <el-button type="primary"  size="mini" @click="openDialog()">
-	        新增
-          </el-button>
+        
         </template>
       </el-table-column>
     </el-table>
@@ -65,7 +73,7 @@ export default {
           this.formVisible = true;
           this.$nextTick(() => {
           this.$refs.dialogform.init(id,read);
-           })
+        })
       },
       // isDetail 是详情传过来的true的值，用来区分详情和查看
       addOrUpdateHandle(id,isDetail) {

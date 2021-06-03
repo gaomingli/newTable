@@ -1,3 +1,10 @@
+/*
+ * @Author       : yfye
+ * @Date         : 2021-06-03 15:23:31
+ * @LastEditors  : yfye
+ * @LastEditTime : 2021-06-03 15:39:05
+ * @FilePath     : \newTable\src\api\index.js
+ */
 //引用上面的http.js文件
 import {get, post, put, deletes } from "@/service/http";
 //登录接口

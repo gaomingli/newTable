@@ -1,3 +1,10 @@
+/*
+ * @Author       : yfye
+ * @Date         : 2021-06-03 15:23:31
+ * @LastEditors  : yfye
+ * @LastEditTime : 2021-06-03 15:41:17
+ * @FilePath     : \newTable\config\index.js
+ */
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
@@ -57,7 +64,7 @@ module.exports = {
          * Source Maps
          */
 
-        productionSourceMap: true,
+        productionSourceMap: false,
         // https://webpack.js.org/configuration/devtool/#production
         devtool: '#source-map',
 
