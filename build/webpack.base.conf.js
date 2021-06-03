@@ -1,3 +1,10 @@
+/*
+ * @Author       : yfye
+ * @Date         : 2021-06-03 15:23:31
+ * @LastEditors  : yfye
+ * @LastEditTime : 2021-06-03 16:26:53
+ * @FilePath     : \newTable\build\webpack.base.conf.js
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -56,20 +63,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-                }
-            },
+                test: /\.(eot|svg|ttf|woff|woff2?)$/,
+                loader: "url-loader"
+              },
             {
                 test: /\.sass$/,
                 loaders: ['style', 'css', 'sass']
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                loader: 'file-loader'
             }
         ]
     },

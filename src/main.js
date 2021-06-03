@@ -1,3 +1,10 @@
+/*
+ * @Author       : yfye
+ * @Date         : 2021-06-03 15:23:31
+ * @LastEditors  : yfye
+ * @LastEditTime : 2021-06-03 16:02:08
+ * @FilePath     : \newTable\src\main.js
+ */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -6,7 +13,8 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import rules from './utils/formCheck.js'
-import moment from "moment"
+import moment from "moment";
+import './assets/icon/iconfont.css';
 // 引用API文件
 import store from "@/store/index.js";
 
