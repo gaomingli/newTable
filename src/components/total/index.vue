@@ -28,7 +28,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <Dialogform ref="dialogform" :dialogfrom="dislogfrom" v-if="formVisible" />
+    <Dialogform ref="dialogform" :dialogfrom="dislogfrom" v-if="formVisible" @addData = "addData" @updateData = "updateData"/>
   </div>
 </template>
 <script>
@@ -80,6 +80,18 @@ export default {
         this.$refs.dialogform.init(a, b);
       });
     },
+    addData(data){
+      console.log("data===>",data);
+      this.tableData = _.concat(this.tableData, data);
+    },
+    updateData(data){   
+      console.log("data===>",data);
+      this.tableData.map((item)=>{
+        if(item.id == data.id){
+           item = data;
+        }
+      })
+    }
   },
 };
 </script>

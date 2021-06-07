@@ -63,8 +63,17 @@ export default {
       this.ruleForm = {}
     },
     isSure(){
+      const time = this.$moment(this.ruleForm.date).format("YYYY-MM-DD")
       this.dialogFormVisible = false;
-      this.ruleForm = {}
+      if(!this.id){
+        console.log("调新增接口");
+        this.ruleForm.date = time;
+        this.$emit("addData",this.ruleForm);
+        this.ruleForm = {}
+      }else{
+        let updateforms = { ...this.ruleForm, date: time };
+        this.$emit("updateData",updateforms);
+      }      
     },
     handleClose(){
        this.dialogFormVisible = false;
