@@ -221,17 +221,14 @@ export default {
     },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
-      this.pageSize = currentPage;
-      this.getTableData();
     },
     handleCurrentChange(val) {
-      debugger;
       console.log(`当前页: ${val}`);
-      this.currentPage = val;
-      this.getTableData();
     },
     handleAdd() {
-      this.form.author = {};
+      this.form.author = "";
+      this.form.title = "";
+      this.form.time = "";
       this.addDialog = true;
     },
     addNo() {
