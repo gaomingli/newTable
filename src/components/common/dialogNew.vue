@@ -3,6 +3,7 @@
     <el-dialog
       :title="!id ? '新增' : read ? '详情' : '修改'"
       :visible.sync="dialogFormVisible"
+      :before-close="handleClose"
     >
       <el-form
         :model="ruleForm"
@@ -26,8 +27,8 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false"
+        <el-button @click="noOpen()">取 消</el-button>
+        <el-button type="primary" @click="isSure()"
           >确 定</el-button
         >
       </div>
@@ -36,11 +37,6 @@
 </template>
 <script>
 export default {
-  props: {
-    dialogfrom: {
-      type: Object,
-    },
-  },
   data() {
     return {
       ruleForm: {
@@ -49,17 +45,31 @@ export default {
         address: "",
       },
       dialogFormVisible: false,
+      id:0,
+      isEdit:false
     };
   },
   methods: {
-    init(id, read) {
+    init(id, isEdit) {
       this.dialogFormVisible = true;
       this.id = 0 || id;
-      this.read = false || read;
-      if (id) {
-        this.ruleForm = this.dialogfrom;
+      this.isEdit = isEdit?true:false;
+      if (isEdit) {
+        this.ruleForm = {...isEdit};
       }
     },
+    noOpen(){
+      this.dialogFormVisible = false;
+      this.ruleForm = {}
+    },
+    isSure(){
+      this.dialogFormVisible = false;
+      this.ruleForm = {}
+    },
+    handleClose(){
+       this.dialogFormVisible = false;
+        this.ruleForm = {}
+    }
   },
 };
 </script>

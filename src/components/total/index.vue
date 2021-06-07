@@ -16,11 +16,11 @@
       <el-table-column prop="address" label="地址"> </el-table-column>
       <el-table-column label="操作" width="300">
         <template slot-scope="scope">
-          <el-button type="primary" size="mini"  @click="openDialog(scope.row)" >
+          <el-button type="primary" size="mini"  @click="openDialog(scope.row,false)" >
             修改
           </el-button>
  
-          <el-button type="primary" size="mini" @click="openDialog(scope.row.id,scope.row)" > 
+          <el-button type="primary" size="mini" @click="openDialog(scope.row,true)" > 
             详情
           </el-button>
  
@@ -74,11 +74,10 @@ export default {
     };
   },
   methods: {
-    openDialog(id, read) {
-      this.dislogfrom = { ...read };
+    openDialog(a, b) {
       this.formVisible = true;
       this.$nextTick(() => {
-        this.$refs.dialogform.init(id, read);
+        this.$refs.dialogform.init(a, b);
       });
     },
   },
