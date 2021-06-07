@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-dialog
-      :title="!id ? '新增' : read ? '详情' : '修改'"
+      :title="!id ? '新增' : isEdit ? '详情' : '修改'"
       :visible.sync="dialogFormVisible"
       :before-close="handleClose"
     >
@@ -9,7 +9,7 @@
         :model="ruleForm"
         ref="ruleForm"
         label-width="100px"
-        :disabled="read"
+        :disabled="isEdit"
       >
         <el-form-item label="日期" prop="date">
           <el-date-picker
@@ -54,8 +54,8 @@ export default {
       this.dialogFormVisible = true;
       this.id = 0 || id;
       this.isEdit = isEdit?true:false;
-      if (isEdit) {
-        this.ruleForm = {...isEdit};
+      if (id) {
+        this.ruleForm = {...id};
       }
     },
     noOpen(){
