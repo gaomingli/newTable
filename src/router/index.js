@@ -11,12 +11,18 @@ import Others from '@/components/others'
 import Total from '@/components/total'
 import Actived from '@/views/actived'
 import Login from '@/views/login'
+import EchartLine from '@/components/echartLine'
+
+// const Login = () =>import ('@/views/login');
+
 Vue.use(Router)
+
 
 export default new Router({
     routes: [{
             path: '/login',
             name: 'Login',
+            // component: resolve =>require(['@/views/login'],resolve)
             component: Login
         },
         {
@@ -71,6 +77,11 @@ export default new Router({
                     path: '/actived',
                     name: 'Actived',
                     component: Actived
+                },
+                {
+                    path: '/echartline',
+                    name: 'EchartLine',
+                    component: EchartLine
                 }
             ]
         }

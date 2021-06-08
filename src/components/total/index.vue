@@ -105,7 +105,20 @@ export default {
     //   })
     // }
   },
+  created(){
+    this.mapFun();
+  },
   methods: {
+    mapFun(){
+      const message = this.tableData.map(msg =>{
+        return {
+          date:msg.date,
+          name:msg.name,
+          address:msg.address
+        }
+      })
+      console.log("message==>",message);
+    },
     openDialog(a, b) {
       this.formVisible = true;
       this.$nextTick(() => {
@@ -113,14 +126,17 @@ export default {
       });
     },
     addData(data){
+      console.log("data===>",data);
       this.tableData = _.concat(this.tableData, data);
     },
     updateData(data){   
       this.tableData.map((item)=>{
+        console.log("item===>",item);
         if(item.id == data.id){
            item = data;
         }
       })
+      
     }
   },
 };

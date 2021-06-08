@@ -35,7 +35,8 @@ export default {
         { name: "预览", path: "/overview" },
         { name: "拓展", path: "/others" },
         { name: "综合", path: "/total" },
-        { name: "生命周期", path: "/actived" }
+        { name: "生命周期", path: "/actived" },
+        { name: "echarts", path: "/echartline" }
       ],
     };
   },
@@ -69,7 +70,7 @@ export default {
   padding: 0;
   height: 50px;
   line-height: 50px;
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 .login-out {
